@@ -81,6 +81,7 @@ class DigitalTimer extends Component {
               seconds,
             ).padStart(2, '0')}`}</p>
           </div>
+          {isTimerRunning ? <p>Running</p> : <p>Set Timer limit</p>}v
           <button onClick={this.handleStartPauseClick} className="button">
             {isTimerRunning ? (
               <>
