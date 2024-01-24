@@ -1,0 +1,33 @@
+/* Write your CSS here */
+.app-container {
+  background-color: #cffcf1;
+  background-size: cover;
+  height: 100vh;
+  text-align: center;
+}
+
+.heading {
+  color: #000000;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+.image {
+  height: 300px;
+}
+.card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/digital-timer-elapsed-bg.png');
+  width: 800px;
+  height: 800px;
+  text-align: center;
+}
+.timer {
+  background-color: #ffffff;
+  border-radius: 80px;
+  width: 150px;
+  height: 150px;
+  border-width: 0px;
+  text-align: center;
+}
+.time {
+  text-align: center;
+}
