@@ -8,7 +8,7 @@ class DigitalTimer extends Component {
     this.state = {
       timerValue: 25 * 60,
       isTimerRunning: false,
-      timerLimit: 25,
+      timerLimit: 25 * 60,
     }
   }
 
@@ -66,22 +66,30 @@ class DigitalTimer extends Component {
     // Handle other end timer actions
   }
 
+  formatTime = time => {
+    const minutes = Math.floor(time / 60)
+    const seconds = time % 60
+    return `${minutes < 10 ? '0' + minutes : minutes}:${
+      seconds < 10 ? '0' + seconds : seconds
+    }`
+  }
+
   render() {
     const {timerValue, isTimerRunning, timerLimit} = this.state
-
-    const minutes = Math.floor(timerValue / 60)
-    const seconds = timerValue % 60
 
     return (
       <div className="app-container">
         <h1 className="heading">Digital Timer</h1>
+
         <div className="card">
           <div className="timer">
-            <p className="time">{`${String(minutes).padStart(2, '0')}:${String(
-              seconds,
-            ).padStart(2, '0')}`}</p>
+            <h1 className="time">
+              {isTimerRunning
+                ? 'Elapsed Time'
+                : ` ${this.formatTime(timerLimit)}`}
+            </h1>
           </div>
-          {isTimerRunning ? <p>Running</p> : <p>Set Timer limit</p>}v
+          {isTimerRunning ? <p>Running</p> : <p>Paused</p>}v
           <button onClick={this.handleStartPauseClick} className="button">
             {isTimerRunning ? (
               <>
@@ -113,11 +121,11 @@ class DigitalTimer extends Component {
               Reset
             </>
           </button>
-          <p className="limit">set time limit</p>
+          <p className="limit">set Timer limit</p>
           <button onClick={this.handleIncrementClick} className="button">
             +
           </button>
-          <p className="para">{timerLimit}</p>
+          <p className="para">25</p>
           <button onClick={this.handleDecrementClick} className="button">
             -
           </button>

@@ -19,6 +19,8 @@
   width: 800px;
   height: 800px;
   text-align: center;
+  border-radius: 2px;
+  border-width: 0px;
 }
 .timer {
   background-color: #ffffff;
@@ -30,6 +32,9 @@
 }
 .time {
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 25px;
 }
 
 .button {
